@@ -5,7 +5,7 @@ utk masukkan data di mongodb, menggunakan mongosh (shell)
 mongodb simpan documents ke dalam collections.
 
 collections : seperti table pada mysql
-
+------------------------------------------------
 untuk masukkan document ke dalam collection, perintahnya :
 >  db.namacollections.insertOne()
 atau
@@ -28,7 +28,7 @@ contoh :
         }
     ]
 )
-
+------------------------------------------------
 untuk melihat isi documents :
 >  db.movies_alabama.find({}) atau
 >  db.movies_alabama.find()
@@ -37,3 +37,10 @@ atau untuk mengecek berdasarkan kriteria :
 >  db.movies_alabama.find({year: 2001})
 atau
 >  db.movies_alabama.find({year:{$lt:2010}}) // cari yang year less than 2010
+
+------------------------------------------------
+utk hapus document:
+>  db.collection.deleteOne()
+contoh :
+>  db.movies_golf_alaska.deleteOne(
+  {'title' : 'Titanic'})
