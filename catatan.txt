@@ -1,0 +1,39 @@
+mongodb
+
+utk masukkan data di mongodb, menggunakan mongosh (shell)
+
+mongodb simpan documents ke dalam collections.
+
+collections : seperti table pada mysql
+
+untuk masukkan document ke dalam collection, perintahnya :
+>  db.namacollections.insertOne()
+atau
+>  db.namacollections.insertMany()
+
+contoh : 
+>  db.movies_alabama.insertMany(
+    [
+        {
+            title: "titanic",
+            year: 1997
+        },
+        {
+            title: "the dark night",
+            year: 2008
+        },
+        {
+            title: "spirited away",
+            year: 2001
+        }
+    ]
+)
+
+untuk melihat isi documents :
+>  db.movies_alabama.find({}) atau
+>  db.movies_alabama.find()
+
+atau untuk mengecek berdasarkan kriteria :
+>  db.movies_alabama.find({year: 2001})
+atau
+>  db.movies_alabama.find({year:{$lt:2010}}) // cari yang year less than 2010
